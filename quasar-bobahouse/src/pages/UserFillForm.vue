@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <q-card class="my-card bg-deep-purple-1 q-pa-md">
+    <q-card class="my-card bg-white q-pa-md">
       <div class="flex flex-center"><img
         src="MilkTea-2.png"
         alt="logo boba house"

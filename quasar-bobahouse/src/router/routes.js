@@ -1,19 +1,23 @@
-
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/WelcomeLayout.vue'),
+    path: "/",
+    component: () => import("layouts/WelcomeLayout.vue"),
     children: [
-      { path: '', component: () => import('pages/WelcomePage.vue') },
-      { path: '/form', component: () => import('pages/UserFillForm.vue') }
-    ]
+      { path: "", component: () => import("pages/WelcomePage.vue") },
+      { path: "/form", component: () => import("pages/UserFillForm.vue") },
+    ],
   },
-  // Always leave this as last one,
-  // but you can also remove it
   {
-    path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
-  }
-]
+    path: "/",
+    component: () => import("layouts/NavBarLayout.vue"),
+    children: [
+      { path: "/menu", component: () => import("pages/MenuPage.vue") },
+    ],
+  },
+  {
+    path: "/:catchAll(.*)*",
+    component: () => import("pages/ErrorNotFound.vue"),
+  },
+];
 
-export default routes
+export default routes;
