@@ -6,7 +6,7 @@
         alt="logo boba house"
         :ratio="1"
         class="q-mt-md flex-center"
-        style="width: 150px"
+        style="width: 150px; border-radius: 4px;"
       /></div>
       <q-card-section>
         <q-form
@@ -18,7 +18,7 @@
                 <q-input filled color="dark" v-model="text" label="Name" :dense="dense" /><br>
                 <q-input filled color="dark" v-model="text" label="Phone number" :dense="dense" />
             </div>
-            <div class="">
+            <div class="button">
                 <q-btn label="Submit" type="submit" color="dark"/>
                 <q-btn label="Reset" type="reset" color="grey-9" flat class="q-ml-sm" />
             </div>
@@ -44,5 +44,9 @@ export default {
     .my-card{
         width: 100%;
         max-width: 350px;
+    }
+    .button{
+        margin-right: 0%;
+        margin-left: 40%;
     }
 </style>
