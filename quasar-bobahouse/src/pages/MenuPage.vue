@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <div>Hill</div>
+    <div></div>
   </q-page>
 </template>
 

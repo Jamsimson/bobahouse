@@ -5,11 +5,14 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         <!-- left side of nav bar -->
         <q-toolbar-title>
+          <!-- Logo Boba House -->
           <q-avatar>
             <img src="MilkTea-2.png" />
           </q-avatar>
+          <!-- Boba House name -->
           BOBA HOUSE
         </q-toolbar-title>
+        <!-- Right site of navbar: username and cart -->
         <div>@Minsong</div>
       </q-toolbar>
     </q-header>
