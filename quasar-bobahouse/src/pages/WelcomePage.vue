@@ -6,7 +6,7 @@
         <div class="col text-h2">Welcome to BOBA HOUSE</div>
         <div class="col text-h4">Bond of lifetime</div>
         <br>
-        <div class="button">
+        <div>
             <q-btn outline rounded class="" color="white" text-color="black" label="Let's Order" @click="$router.push('/form')"/>
         </div>
       </div>
