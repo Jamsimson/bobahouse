@@ -16,9 +16,32 @@
         <div>@Minsong</div>
       </q-toolbar>
     </q-header>
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer v-model="leftDrawerOpen" bordered>
       <!-- drawer content -->
-      <div></div>
+      <q-list>
+        <q-item-label header> Menu Boba House </q-item-label>
+        <!-- Menu icon -->
+        <q-item clickable v-ripple @click="$router.push('/menu')">
+          <q-item-section avatar>
+            <q-icon color="dark" name="home" />
+          </q-item-section>
+          <q-item-section>Menu</q-item-section>
+        </q-item>
+        <!-- Cart icon -->
+        <q-item clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon color="dark" name="home" />
+          </q-item-section>
+          <q-item-section>Cart</q-item-section>
+        </q-item>
+        <!-- Transaction -->
+        <q-item clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon color="dark" name="home" />
+          </q-item-section>
+          <q-item-section>Transaction</q-item-section>
+        </q-item>
+      </q-list>
     </q-drawer>
 
     <q-page-container>
@@ -31,7 +54,7 @@
 import { ref } from "vue";
 
 export default {
-    name:'NavBarLayout',
+  name: "NavBarLayout",
   setup() {
     const leftDrawerOpen = ref(false);
 
@@ -48,7 +71,7 @@ export default {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-q-drawer{
+q-drawer {
   background-color: #d6baff;
 }
 </style>
