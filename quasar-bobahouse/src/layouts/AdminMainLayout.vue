@@ -1,7 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-
-    <q-header elevated >
+    <q-header elevated class="setNavbar">
       <q-toolbar>
         <q-btn
           flat
@@ -13,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          BOBA House Dashboard
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Admin Manager</div>
       </q-toolbar>
     </q-header>
 
@@ -24,12 +23,13 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
+      class="setNavbar"
     >
       <q-list>
         <q-item-label
           header
         >
-          Essential Links
+          LogoBOBA House
         </q-item-label>
 
         <EssentialLink
@@ -52,54 +52,37 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
+    title: 'Dashboard ',
     caption: 'quasar.dev',
     icon: 'school',
-    link: 'https://quasar.dev'
+    link: ''
   },
   {
-    title: 'Github',
+    title: 'Management Menu',
     caption: 'github.com/quasarframework',
     icon: 'code',
-    link: 'https://github.com/quasarframework'
+    link: ''
   },
   {
-    title: 'Discord Chat Channel',
+    title: 'Management Menu',
     caption: 'chat.quasar.dev',
     icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    link: ''
   },
   {
-    title: 'Forum',
+    title: 'Trasaction',
     caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    icon: 'money',
+    link: ''
   },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
+
 ]
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    EssentialLink,
   },
 
   setup () {
@@ -115,3 +98,18 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+
+  fornt {
+    background-color: #d6baff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+
+  .setNavbar {
+    background-color: #d6baff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+</style>
