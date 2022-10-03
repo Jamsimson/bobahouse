@@ -23,7 +23,7 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      class="setNavbar"
+      class="setEssentials"
     >
       <q-list>
         <q-item-label
@@ -53,27 +53,27 @@ import EssentialLink from 'components/EssentialLink.vue'
 const linksList = [
   {
     title: 'Dashboard ',
-    caption: 'quasar.dev',
+    caption: '',
     icon: 'school',
-    link: ''
+    link: '/admindash'
   },
   {
     title: 'Management Menu',
-    caption: 'github.com/quasarframework',
+    caption: '',
     icon: 'code',
-    link: ''
+    link: 'managemenu'
   },
   {
     title: 'Management Menu',
-    caption: 'chat.quasar.dev',
+    caption: '',
     icon: 'chat',
-    link: ''
+    link: 'managemenu'
   },
   {
     title: 'Trasaction',
-    caption: 'forum.quasar.dev',
+    caption: '',
     icon: 'money',
-    link: ''
+    link: 'tranboard'
   },
 
 ]
@@ -101,12 +101,11 @@ export default defineComponent({
 
 <style>
 
-  fornt {
-    background-color: #d6baff;
+  .setEssentials {
+    background-color: #fffff;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
   }
-
   .setNavbar {
     background-color: #d6baff;
     font-family: Arial, Helvetica, sans-serif;
