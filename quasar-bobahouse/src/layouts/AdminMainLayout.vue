@@ -11,9 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          BOBA House Dashboard
-        </q-toolbar-title>
+        <q-toolbar-title> BOBA House Management </q-toolbar-title>
 
         <div>Admin Manager</div>
       </q-toolbar>
@@ -26,10 +24,11 @@
       class="setEssentials"
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          LogoBOBA House
+        <q-item-label header>
+          <q-avatar rounded style="fixed-center">
+            <img src="https://cdn.quasar.dev/img/avatar.png"/>
+          </q-avatar>
+          
         </q-item-label>
 
         <EssentialLink
@@ -47,68 +46,67 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { defineComponent, ref } from "vue";
+import EssentialLink from "components/EssentialLink.vue";
 
 const linksList = [
   {
-    title: 'Dashboard ',
-    caption: '',
-    icon: 'school',
-    link: '/admindash'
+    title: "Dashboard ",
+    caption: "",
+    icon: "school",
+    link: "/admindash",
   },
   {
-    title: 'Management Menu',
-    caption: '',
-    icon: 'code',
-    link: 'managemenu'
+    title: "Management Menu",
+    caption: "",
+    icon: "code",
+    link: "managemenu",
   },
   {
-    title: 'Management Menu',
-    caption: '',
-    icon: 'chat',
-    link: 'managemenu'
+    title: "Management Menu",
+    caption: "",
+    icon: "chat",
+    link: "managemenu",
   },
   {
-    title: 'Trasaction',
-    caption: '',
-    icon: 'money',
-    link: 'tranboard'
+    title: "Trasaction",
+    caption: "",
+    icon: "money",
+    link: "tranboard",
   },
-
-]
+];
 
 export default defineComponent({
-  name: 'MainLayout',
+  name: "MainLayout",
 
   components: {
     EssentialLink,
   },
 
-  setup () {
-    const leftDrawerOpen = ref(false)
+  setup() {
+    const leftDrawerOpen = ref(false);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-})
+      toggleLeftDrawer() {
+        leftDrawerOpen.value = !leftDrawerOpen.value;
+      },
+    };
+  },
+});
 </script>
 
 <style>
+.setEssentials {
+  background-color: #ffff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
-  .setEssentials {
-    background-color: #fffff;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-  }
-  .setNavbar {
-    background-color: #d6baff;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-  }
+.setNavbar {
+  background-color: #d6baff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 </style>

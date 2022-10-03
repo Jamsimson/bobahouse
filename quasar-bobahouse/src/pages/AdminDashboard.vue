@@ -2,7 +2,7 @@
 
     <q-page style="font-family: Arial, Helvetica, sans-serif;" >
 
-      <div>
+      <div class="text-center" >
         <h2>BOBA House Dashboard</h2>
       </div>
       <div class="q-pa-md row items-start q-gutter-md">
@@ -17,7 +17,7 @@
             <q-separator color="grey-1" size="5px" inset />
 
             <q-card-section class="text-dark" >
-              <div class="text-subtitle1 text-center">100</div>
+              <div class="text-subtitle1 text-center">{{totalOrder}}</div>
             </q-card-section>
 
           </q-card>
@@ -33,7 +33,7 @@
             <q-separator color="grey-1" size="5px" inset />
 
             <q-card-section class="text-dark" >
-              <div class="text-subtitle1 text-center">5</div>
+              <div class="text-subtitle1 text-center">{{pending}}</div>
             </q-card-section>
 
           </q-card>
@@ -49,7 +49,7 @@
             <q-separator color="grey-1" size="5px" inset />
 
             <q-card-section class="text-dark" >
-              <div class="text-subtitle1 text-center">2</div>
+              <div class="text-subtitle1 text-center">{{rejected}}</div>
             </q-card-section>
 
           </q-card>
@@ -68,7 +68,6 @@
             <q-card-section>
               <div class="q-pa-md">
                 <q-table
-                  title="Treats"
                   :rows="rows"
                   :columns="columns"
                   row-key="name"
@@ -167,11 +166,16 @@ const rows = [
 
 export default {
   name: "AdminDashboard",
+  
 
   setup(){
     return{
       columns,
       rows,
+      totalOrder: 100,
+      pending: 6,
+      rejected: 2,
+      
     }
   }
 }
