@@ -2,14 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="setNavbar">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title> BOBA House Management </q-toolbar-title>
 
@@ -17,25 +10,16 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      class="setEssentials"
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="setEssentials">
       <q-list>
         <q-item-label header>
           <q-avatar rounded style="fixed-center">
-            <img src="https://cdn.quasar.dev/img/avatar.png"/>
+            <img src="https://cdn.quasar.dev/img/avatar.png" />
           </q-avatar>
-          
+
         </q-item-label>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
 
@@ -60,12 +44,6 @@ const linksList = [
     title: "Management Menu",
     caption: "",
     icon: "code",
-    link: "managemenu",
-  },
-  {
-    title: "Management Menu",
-    caption: "",
-    icon: "chat",
     link: "managemenu",
   },
   {
