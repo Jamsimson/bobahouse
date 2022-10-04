@@ -12,9 +12,9 @@
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="setEssentials">
       <q-list>
-        <q-item-label header>
-          <q-avatar rounded style="fixed-center">
-            <img src="https://cdn.quasar.dev/img/avatar.png" />
+        <q-item-label header class="text-center">
+          <q-avatar rounded>
+            <img src="MilkTea.png" />
           </q-avatar>
 
         </q-item-label>

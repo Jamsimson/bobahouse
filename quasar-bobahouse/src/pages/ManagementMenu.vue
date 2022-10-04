@@ -23,13 +23,18 @@
 
           <!-- Menu tab -->
           <q-tab-panel name="Menu">
+            <q-btn color="white" text-color="black" icon="my_location" />
             <q-table grid title="Add Menu" :rows="rows" :columns="columns" row-key="name" :filter="filter" hide-header>
+
               <template v-slot:top-right>
                 <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+
                   <template v-slot:append>
                     <q-icon name="search" />
                   </template>
+
                 </q-input>
+
               </template>
             </q-table>
           </q-tab-panel>
