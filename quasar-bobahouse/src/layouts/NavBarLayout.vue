@@ -13,7 +13,12 @@
           BOBA HOUSE
         </q-toolbar-title>
         <!-- Right site of navbar: username and cart -->
-        <div>@Minsong</div>
+        <div v-for="user in user" :key="user">@{{ user.username }}</div>
+        <q-item>
+          <q-item-section flex-center>
+            <q-icon size="sm" name="shopping_bag" />
+          </q-item-section>
+        </q-item>
       </q-toolbar>
     </q-header>
     <q-drawer v-model="leftDrawerOpen" bordered>
@@ -30,14 +35,14 @@
         <!-- Cart icon -->
         <q-item clickable v-ripple>
           <q-item-section avatar>
-            <q-icon color="dark" name="home" />
+            <q-icon color="dark" name="shopping_bag" />
           </q-item-section>
           <q-item-section>Cart</q-item-section>
         </q-item>
         <!-- Transaction -->
         <q-item clickable v-ripple>
           <q-item-section avatar>
-            <q-icon color="dark" name="home" />
+            <q-icon color="dark" name="blender" />
           </q-item-section>
           <q-item-section>Transaction</q-item-section>
         </q-item>
@@ -63,6 +68,17 @@ export default {
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
+    };
+  },
+  data() {
+    return {
+      user: [
+        {
+          id: 1,
+          username: "Minisong",
+          phonenumber: "023-651-4895",
+        },
+      ],
     };
   },
 };

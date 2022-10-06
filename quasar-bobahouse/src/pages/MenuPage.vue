@@ -20,7 +20,7 @@
       </q-input>
     </div>
     <!-- Catagory dropdown-->
-    <dir class="flex flex-center">
+    <div class="flex flex-center">
       <q-select
         borderless
         color="dark"
@@ -29,114 +29,28 @@
         label="Catagory"
         class="buttoncatagory"
       />
-    </dir>
-      <!-- Beverag -->
-      <div class="flex flex-start q-pa-md" id="layoutbeverage">
-        <div class="q-pa-md row  items-start q-gutter-md">
-          <div >
-            <q-card class="my-card">
-              <img
-                src="https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1"
-              />
-              <q-card-actions align="left">
-                <div>Meu1</div>
-              </q-card-actions>
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="add" />
-              </q-card-actions>
-            </q-card>
-          </div>
+    </div>
+    <!-- Card Menu -->
 
-          <div>
-            <q-card class="my-card">
-              <img
-                src="https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1"
-              />
-              <q-card-actions align="left">
-                <div>Meu1</div>
-              </q-card-actions>
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="add" />
-              </q-card-actions>
-            </q-card>
-          </div>
-
-          <div>
-            <q-card class="my-card">
-              <img
-                src="https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1"
-              />
-              <q-card-actions align="left">
-                <div>Meu1</div>
-              </q-card-actions>
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="add" />
-              </q-card-actions>
-            </q-card>
-          </div>
-
-          <div>
-            <q-card class="my-card">
-              <img
-                src="https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1"
-              />
-              <q-card-actions align="left">
-                <div>Meu1</div>
-              </q-card-actions>
-              <q-card-actions align="right">
-                <q-btn flat round color="red" icon="add" />
-              </q-card-actions>
-            </q-card>
-          </div>
-
-          <div>
-            <q-card class="my-card">
-            <img
-              src="https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1"
-            />
-            <q-card-actions align="left">
-              <div>Meu1</div>
-            </q-card-actions>
-            <q-card-actions align="right">
-              <q-btn flat round color="red" icon="add" />
-            </q-card-actions>
-          </q-card>
-          </div>
-
-          <div>
-           <q-card class="my-card ">
-            <img
-              src="https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1"
-            />
-            <q-card-actions align="left">
-              <div>Meu1</div>
-            </q-card-actions>
-            <q-card-actions align="right">
-              <q-btn flat round color="red" icon="add" />
-            </q-card-actions>
-          </q-card>
-         </div>
-
-          <div>
-            <q-card class="my-card">
-            <img
-              src="https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1"
-            />
-            <q-card-actions align="left">
-              <div>Meu1</div>
-            </q-card-actions>
-            <q-card-actions align="right">
-              <q-btn flat round color="red" icon="add" />
-            </q-card-actions>
-          </q-card>
-          </div>
-        </div>
+    <div class="flex flex-start q-pa-md" id="layoutbeverage">
+      <div class="q-pa-md row items-start q-gutter-md">
+        <cardMenu />
       </div>
+    </div>
   </q-page>
 </template>
 
 <script>
-export default {};
+import cardMenu from "../components/cardMenu.vue";
+export default {
+  name: "MenuPage",
+  components: {
+    cardMenu,
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
@@ -149,12 +63,11 @@ export default {};
   margin-right: 55%;
 }
 .my-card {
-
   border-radius: 4%;
   width: 100%;
   max-width: 300px;
 }
-#layoutbeverage{
+#layoutbeverage {
   margin: auto;
   margin-left: 6%;
   margin-right: 0%;
