@@ -15,64 +15,56 @@
       </q-card-section>
       <q-card-section>
         <q-card-actions align="right">
-          <q-btn flat round color="red" icon="add" @click="confirm = true" />
+          <q-btn
+            flat
+            round
+            color="red"
+            icon="add"
+            @click="addButton(index.id - 1)"
+          />
         </q-card-actions>
       </q-card-section>
     </q-card>
   </q-intersection>
 
-  <!-- Dialog -->
-  <q-dialog v-model="confirm" persistent>
+  <!-- Dialog beverage's menu-->
+  <q-dialog v-model="dialog" persistent>
     <q-card class="my-card bg-white q-pa-md">
-      <div class="flex flex-center">
-        <div class="closePosition">
-          <q-btn
-            flat
-            round
-            color="dark"
-            icon="close"
-            size="md"
-            @click="confirm = false"
-          />
-        </div>
-        <img
-          src="MilkTea-2.png"
-          alt="logo boba house"
-          :ratio="1"
-          class="q-mt-md flex-center"
-          style="width: 150px; border-radius: 4px"
-        />
-      </div>
+      <!-- Section Beverage name and image -->
       <q-card-section>
-        <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-          <div>
-            <q-input
-              filled
-              color="dark"
-              v-model="username"
-              label="Name"
-              :dense="dense"
-            /><br />
-            <q-input
-              filled
-              color="dark"
-              v-model="phonenumber"
-              label="Phone number"
-              :dense="dense"
+        <div class="flex flex-center">
+          <div class="colunm">
+            <div class="closePosition">
+              <q-btn
+                flat
+                round
+                color="dark"
+                icon="close"
+                size="md"
+                @click="dialog = false"
+              />
+            </div>
+            <br />
+            <!-- Beverage's name -->
+            <div class="text-h4">{{ numDialog.menu_name }}</div>
+            <!-- Beverage's image -->
+            <img
+              v-bind:src="numDialog.img"
+              alt="image menu"
+              :ratio="1"
+              class="q-mt-md flex-center"
+              style="width: 450px"
             />
           </div>
-          <div class="button">
-            <q-btn label="Submit" type="submit" color="dark" />
-            <q-btn
-              label="Reset"
-              type="reset"
-              color="grey-9"
-              flat
-              class="q-ml-sm"
-              @click="onReset()"
-            />
-          </div>
-        </q-form>
+        </div>
+      </q-card-section>
+      <!-- Section Form  -->
+      <q-card-section>
+        <FormOptions />
+      </q-card-section>
+      <q-card-section class="q-pa-md"> </q-card-section>
+      <q-card-section>
+        <!-- เพิ่มจำนวนเเก้ว + 1 - (add) -->
       </q-card-section>
     </q-card>
   </q-dialog>
@@ -80,15 +72,21 @@
 
 <script>
 import { ref } from "vue";
+import FormOptions from "../components/FormOptions.vue";
 export default {
   setup() {
     return {
-      confirm: ref(false),
+      dialog: ref(false),
     };
   },
   name: "cardMenu",
+  components: {
+    FormOptions,
+  },
   data() {
     return {
+      numDialog: "",
+      size: "",
       menus: [
         // id 1
         {
@@ -125,8 +123,54 @@ export default {
             L: 55,
           },
         },
+        // id 1
+        {
+          id: 4,
+          img: "https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1",
+          menu_name: "Thai Tea",
+          catagory: "Tea",
+          size: {
+            S: 30,
+            M: 45,
+            L: 55,
+          },
+        },
+        //  id 2
+        {
+          id: 5,
+          img: "https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1",
+          menu_name: "Milk Tea",
+          catagory: "Tea",
+          size: {
+            S: 30,
+            M: 45,
+            L: 55,
+          },
+        },
+        {
+          id: 6,
+          img: "https://i0.wp.com/kiyafries.com/wp-content/uploads/2019/04/how-to-make-boba-tea.png?fit=1170%2C780&ssl=1",
+          menu_name: "Milk Tea boba",
+          catagory: "Tea",
+          size: {
+            S: 30,
+            M: 45,
+            L: 55,
+          },
+        },
       ],
     };
+  },
+  methods: {
+    addButton(id) {
+      this.dialog = true;
+      console.log(`dialog id:` + id);
+      this.numDialog = this.menus[id];
+    },
+    close() {
+      this.dialog = false;
+      this.numDialog = "";
+    },
   },
 };
 </script>

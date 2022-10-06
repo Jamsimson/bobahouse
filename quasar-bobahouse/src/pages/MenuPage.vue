@@ -31,7 +31,6 @@
       />
     </div>
     <!-- Card Menu -->
-
     <div class="flex flex-start q-pa-md" id="layoutbeverage">
       <div class="q-pa-md row items-start q-gutter-md">
         <cardMenu />
