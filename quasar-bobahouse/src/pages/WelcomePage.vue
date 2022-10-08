@@ -7,7 +7,7 @@
         <div class="col text-h4">Bond of lifetime</div>
         <br />
         <div class="button">
-            <q-btn outline rounded class="" color="white" text-color="black" label="Let's Order" />
+            <q-btn outline rounded class="" color="white" text-color="black" label="Let's Order" @click="$router.push('/form')" />
         </div>
       </div>
     </div>

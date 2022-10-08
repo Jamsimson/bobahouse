@@ -18,10 +18,10 @@
                 <q-input filled color="dark" v-model="text" label="Name" :dense="dense" /><br>
                 <q-input filled color="dark" v-model="text" label="Phone number" :dense="dense" />
             </div>
-            <div class="">
+            <divss>
                 <q-btn label="Submit" type="submit" color="dark"/>
                 <q-btn label="Reset" type="reset" color="grey-9" flat class="q-ml-sm" />
-            </div>
+            </divss>
         </q-form>
       </q-card-section>
     </q-card>

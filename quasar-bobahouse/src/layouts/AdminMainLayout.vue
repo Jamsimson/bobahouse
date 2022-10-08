@@ -44,13 +44,13 @@ const linksList = [
     title: "Management Menu",
     caption: "",
     icon: "code",
-    link: "managemenu",
+    link: "/managemenu",
   },
   {
     title: "Trasaction",
     caption: "",
     icon: "money",
-    link: "tranboard",
+    link: "/stranboard",
   },
 ];
 
