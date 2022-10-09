@@ -50,7 +50,7 @@ const linksList = [
     title: "Trasaction",
     caption: "",
     icon: "money",
-    link: "/stranboard",
+    link: "/tranboard",
   },
 ];
 
