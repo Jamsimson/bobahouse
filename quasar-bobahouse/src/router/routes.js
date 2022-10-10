@@ -12,6 +12,7 @@ const routes = [
     component: () => import("layouts/NavBarLayout.vue"),
     children: [
       { path: "/menu", component: () => import("pages/MenuPage.vue") },
+      { path: "/payment", component: () => import("pages/PaymentPage.vue") },
     ],
   },
   {

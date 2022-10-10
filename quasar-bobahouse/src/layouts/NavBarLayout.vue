@@ -16,7 +16,9 @@
         <div v-for="user in user" :key="user">@{{ user.username }}</div>
         <q-item>
           <q-item-section flex-center>
-            <q-icon size="sm" name="shopping_bag" />
+            <q-btn round icon="shopping_bag" @click="$router.push('/payment')">
+              <q-badge floating color="red" rounded>{{ cart.length }}</q-badge>
+            </q-btn>
           </q-item-section>
         </q-item>
       </q-toolbar>
@@ -33,7 +35,7 @@
           <q-item-section>Menu</q-item-section>
         </q-item>
         <!-- Cart icon -->
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple @click="$router.push('/payment')">
           <q-item-section avatar>
             <q-icon color="dark" name="shopping_bag" />
           </q-item-section>
@@ -57,7 +59,7 @@
 
 <script>
 import { ref } from "vue";
-
+import { userCounterStore } from "../stores/database";
 export default {
   name: "NavBarLayout",
   setup() {
@@ -72,6 +74,8 @@ export default {
   },
   data() {
     return {
+      database: userCounterStore(),
+      cart: [{}, {}, {}],
       user: [
         {
           id: 1,

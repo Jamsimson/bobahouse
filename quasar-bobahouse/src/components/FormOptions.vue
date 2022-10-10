@@ -21,19 +21,19 @@
         <q-radio name="sugar" v-model="sugar" val="0%" label="0%" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="" label="25%" />
+        <q-radio name="sugar" v-model="sugar" val="25%" label="25%" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="50%" />
+        <q-radio name="sugar" v-model="sugar" val="50%" label="50%" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="75%" />
+        <q-radio name="sugar" v-model="sugar" val="75%" label="75%" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="100%" />
+        <q-radio name="sugar" v-model="sugar" val="100%" label="100%" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="120%" />
+        <q-radio name="sugar" v-model="sugar" val="120%" label="120%" />
       </div>
     </q-card-section>
   </q-card>
@@ -42,22 +42,28 @@
     <q-card-section class="q-pa-md">
       <div class="text-h5">Topping</div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="0%" label="0%" />
+        <q-radio
+          name="sugar"
+          v-model="topping"
+          val="topping1"
+          label="topping1"
+        />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="" label="25%" />
+        <q-radio
+          name="sugar"
+          v-model="topping"
+          val="topping2"
+          label="topping2"
+        />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="50%" />
-      </div>
-      <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="75%" />
-      </div>
-      <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="100%" />
-      </div>
-      <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="120%" />
+        <q-radio
+          name="sugar"
+          v-model="topping"
+          val="topping3"
+          label="topping3"
+        />
       </div>
     </q-card-section>
   </q-card>
@@ -66,24 +72,37 @@
     <q-card-section class="q-pa-md">
       <div class="text-h5">Ice</div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="0%" label="0%" />
+        <q-radio name="ice" v-model="ice" val="ice1" label="ice1" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="" label="25%" />
+        <q-radio name="ice" v-model="ice" val="ice2" label="ice2" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="50%" />
+        <q-radio name="ice" v-model="ice" val="ice3" label="ice3" />
       </div>
       <div>
-        <q-radio name="sugar" v-model="sugar" val="L" label="75%" />
+        <q-radio name="ice" v-model="ice" val="ice4" label="ice4" />
       </div>
     </q-card-section>
   </q-card>
+  <div>{{ size }} {{ sugar }} {{ topping }} {{ ice }}</div>
 </template>
 
 <script>
+import { userCounterStore } from "../stores/database";
+import { userFormStore } from "../stores/form";
 export default {
   name: "FormOptions",
+
+  data() {
+    return {
+      order: [],
+      size: "",
+      sugar: "",
+      topping: "",
+      ice: "",
+    };
+  },
 };
 </script>
 

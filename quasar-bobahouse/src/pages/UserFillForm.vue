@@ -29,7 +29,12 @@
             />
           </div>
           <div class="button">
-            <q-btn label="Submit" type="submit" color="dark" />
+            <q-btn
+              label="Submit"
+              type="submit"
+              color="dark"
+              @click="onSubmit()"
+            />
             <q-btn
               label="Reset"
               type="reset"
@@ -46,10 +51,13 @@
 </template>
 
 <script>
+import { userCounterStore } from "../stores/database";
+
 export default {
   name: "UserFillForm",
   data() {
     return {
+      database: userCounterStore(),
       username: null,
       phonenumber: null,
     };
@@ -58,7 +66,14 @@ export default {
     onReset() {
       (this.username = null), (this.phonenumber = null);
     },
-    onsubmit() {},
+    onSubmit() {
+      var id = this.database.users.length + 1;
+      var user = this.username;
+      var phone = this.phonenumber;
+      this.database.users.push({ id, user, phone });
+      console.log(`users[]`, this.database.users);
+      this.$router.push("/menu");
+    },
   },
 };
 </script>
