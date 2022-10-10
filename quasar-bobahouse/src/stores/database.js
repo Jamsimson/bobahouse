@@ -103,6 +103,5 @@ export const userCounterStore = defineStore({
     increaseMenu() {
       this.menus.push({ id: this.menus.length + 1 });
     },
-    addMenu() {},
   },
 });
