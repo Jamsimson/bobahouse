@@ -2,7 +2,14 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="setNavbar">
       <q-toolbar>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+        <q-btn
+          flat
+          dense
+          round
+          icon="menu"
+          aria-label="Menu"
+          @click="toggleLeftDrawer"
+        />
 
         <q-toolbar-title> BOBA House Management </q-toolbar-title>
 
@@ -10,16 +17,24 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="setEssentials">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+      class="setEssentials"
+    >
       <q-list>
         <q-item-label header class="text-center">
           <q-avatar rounded>
             <img src="MilkTea.png" />
           </q-avatar>
-
         </q-item-label>
 
-        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
+        <EssentialLink
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
+        />
       </q-list>
     </q-drawer>
 
@@ -77,13 +92,12 @@ export default defineComponent({
 
 <style>
 .setEssentials {
-  background-color: #ffff;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
 .setNavbar {
-  background-color: #d6baff;
+  background-image: linear-gradient(#b4b5e9, #e88b9a);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }

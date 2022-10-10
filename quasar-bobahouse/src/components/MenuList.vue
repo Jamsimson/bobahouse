@@ -1,29 +1,32 @@
 <template>
   <div class="q-pa-md">
     <q-card class="my-card">
-      <q-card-section class="col-12">
+      <!-- <q-card-section class="col-12 flex flex-center">
         <div class="text-h6">Add more Menu Or Topping</div>
-      </q-card-section>
+      </q-card-section> -->
 
-      <q-tabs v-model="tab" class="text-teal">
+      <q-tabs v-model="tab" class="text-red-4">
         <q-tab label="Menu" name="menu" />
         <q-tab label="Topping" name="topping" />
       </q-tabs>
 
       <q-separator />
 
-      <div class="q-pa-md">
+      <div class="q-pa-md setUp">
         <q-tab-panels v-model="tab" animated class="setUp">
           <q-tab-panel name="menu">
             <q-card-section class="flex flex-center">
-              <q-btn
-                label="Add Menu"
-                color="white"
-                text-color="black"
-                @click="addMenu = true"
-              />
+              <!-- Sample -->
+              <div class="q-pa-md q-gutter-sm">
+                <q-btn
+                  label="Add Menu"
+                  color="white"
+                  text-color="dark"
+                  @click="addMenu = true"
+                />
+              </div>
             </q-card-section>
-
+            <!-- Add menu -->
             <q-card-section>
               <q-dialog v-model="addMenu">
                 <q-card class="my-card" style="width: 400px">
@@ -59,10 +62,8 @@
                         ]"
                       />
 
-                      
-
                       <div>
-                        <q-btn label="Submit" type="submit" color="primary"/>
+                        <q-btn label="Submit" type="submit" color="primary" />
                         <q-btn
                           label="Reset"
                           type="reset"
@@ -153,65 +154,65 @@
 import { ref } from "vue";
 import { useAddMenu } from "src/stores/addMenu";
 
-const columns = [
-  {
-    name: "menuName",
-    required: true,
-    label: "Name",
-    align: "left",
-    field: (row) => row.name,
-    sortable: true,
-  },
-  {
-    name: "price",
-    align: "center",
-    label: "Price (Bath)",
-    field: "price",
-    sortable: true,
-  },
-  { name: "size", label: "Size", field: "size", sortable: true },
-];
-
-const rows = [
-  {
-    name: "TGBK Milk Tea",
-    price: "95,115,145",
-    size: "S,M,L,",
-  },
-  {
-    name: "Milk Tea",
-    price: "95,115,145",
-    size: "S,M,L,",
-  },
-  {
-    name: "Tarn Q Milk Tea",
-    price: "95,115,145",
-    size: "S,M,L,",
-  },
-  {
-    name: "Assan Black Tea",
-    price: "95,115,145",
-    size: "S,M,L,",
-  },
-  {
-    name: "Jasmine Green Tea",
-    price: "95,115,145",
-    size: "S,M,L,",
-  },
-  {
-    name: "Golden Oolong Tea",
-    price: "95,115,145",
-    size: "S,M,L,",
-  },
-];
-
 export default {
   name: "menuList",
   setup() {
+    const database = useAddMenu();
     const menuName = ref(null);
     const price = ref(null);
     submitNewMenu: ref(false);
-    
+
+    const columns = [
+      {
+        name: "menuName",
+        required: true,
+        label: "Name",
+        align: "left",
+        field: (row) => rows,
+        sortable: true,
+      },
+      {
+        name: "price",
+        align: "center",
+        label: "Price (Bath)",
+        field: "price",
+        sortable: true,
+      },
+      { name: "size", label: "Size", field: "size", sortable: true },
+    ];
+
+    const rows = [
+      {
+        name: "Thai Tea",
+        price: "95,115,145",
+        size: "S,M,L,",
+      },
+      {
+        name: "Milk Tea",
+        price: "95,115,145",
+        size: "S,M,L,",
+      },
+      {
+        name: "Tarn Q Milk Tea",
+        price: "95,115,145",
+        size: "S,M,L,",
+      },
+      {
+        name: "Assan Black Tea",
+        price: "95,115,145",
+        size: "S,M,L,",
+      },
+      {
+        name: "Jasmine Green Tea",
+        price: "95,115,145",
+        size: "S,M,L,",
+      },
+      {
+        name: "Golden Oolong Tea",
+        price: "95,115,145",
+        size: "S,M,L,",
+      },
+    ];
 
     return {
       tab: ref("menu"),
@@ -223,9 +224,10 @@ export default {
       rows,
       menuName,
       price,
+      database,
 
-      onSubmit(){
-        submitNewMenu:ref(true)
+      onSubmit() {
+        submitNewMenu: ref(true);
       },
       onReset() {},
     };

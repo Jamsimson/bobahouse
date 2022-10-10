@@ -21,7 +21,7 @@ export default {
 
 <style>
 .setUp {
-  background-color: #d6baff;
+  background-image: linear-gradient(#b4b5e9, #e88b9a);
 
   font-family: Arial, Helvetica, sans-serif;
 }
