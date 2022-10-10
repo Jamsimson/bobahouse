@@ -73,7 +73,7 @@ const columns = [
     required: true,
     label: "Order Name",
     align: "left",
-    field: (row) => row.name,
+    field: (row) => row.orderName,
     format: (val) => `${val}`,
     sortable: true,
   },
