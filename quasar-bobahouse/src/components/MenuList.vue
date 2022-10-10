@@ -13,15 +13,17 @@
       <q-separator />
 
       <div class="q-pa-md">
-        <q-btn
-          color="white"
-          text-color="black"
-          label="Add Menu"
-          @click="popUpDialog = true"
-        />
+        <q-card-section class="flex flex-center">
+          <q-btn
+            color="white"
+            text-color="black"
+            label="Add Menu"
+            @click="popUpDialog = true"
+          />
+        </q-card-section>
         <q-tab-panels v-model="tab" animated class="setUp">
           <q-tab-panel name="menu">
-            <q-table
+            <!-- <q-table
               grid
               v-ripple
               v-for="newMenu in store.menu"
@@ -31,8 +33,8 @@
               :filter="filter"
               hide-header
             >
-            </q-table>
-            <q-dialog
+            </q-table> -->
+            <!-- <q-dialog
               v-model="popUpDialog"
               @submit.prevent="onSubmit"
               @reset="onReset"
@@ -88,7 +90,7 @@
                   />
                 </q-card-actions>
               </q-card>
-            </q-dialog>
+            </q-dialog> -->
           </q-tab-panel>
 
           <q-tab-panel name="topping">
@@ -250,25 +252,25 @@ export default {
       tab: ref("menu"),
       popUpDialog: ref(false),
       menuName: ref(null),
-      columns: ref(null),
-      rows: ref(null),
+      // columns: ref(null),
+      // rows: ref(null),
 
-      set() {
-        return {
-          store: useAddMenu(),
-          newMenu: "",
-        };
-      },
+      // set() {
+      //   return {
+      //     store: useAddMenu(),
+      //     newMenu: "",
+      //   };
+      // },
 
-      onSubmit() {
-        if (this.newMenu.length == 0) return;
+      // onSubmit() {
+      //   if (this.newMenu.length == 0) return;
 
-        this.store.addNewMenu(this.newMenu);
-        this.newMenu = "";
-      },
-      onReset() {
-        this.newMenu = "";
-      },
+      //   this.store.addNewMenu(this.newMenu);
+      //   this.newMenu = "";
+      // },
+      // onReset() {
+      //   this.newMenu = "";
+      // },
     };
   },
 };
