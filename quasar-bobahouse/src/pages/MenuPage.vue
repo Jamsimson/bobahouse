@@ -31,16 +31,16 @@
       />
     </div>
     <!-- Add menu  -->
-    <div class="flex flex-center">
+    <!-- <div class="flex flex-center">
       <q-btn color="red" icon="add" label="Add" @click="addMenu = true" />
       <q-btn
         color="primary"
         icon="add"
         label="remove"
         @click="removeMenu = true"
-      />
-      <!-- Add Menu -->
-      <q-dialog v-model="addMenu" persistent>
+      /> -->
+    <!-- Add Menu -->
+    <!-- <q-dialog v-model="addMenu" persistent>
         <q-card>
           <q-card-section class="colunm items-center">
             <q-input v-model="menu_name" type="text" label="Menu name" />
@@ -61,7 +61,7 @@
           </q-card-actions>
         </q-card>
       </q-dialog>
-    </div>
+    </div> -->
     <!-- Delete Menu -->
     <q-dialog v-model="removeMenu" persistent>
       <q-card>
@@ -70,7 +70,13 @@
         </q-card-section>
         <q-card-actions align="right">
           <q-btn flat label="Cancel" color="primary" v-close-popup />
-          <q-btn flat label="Turn on Wifi" color="primary" v-close-popup />
+          <q-btn
+            flat
+            label="Remove"
+            color="primary"
+            v-close-popup
+            @click="removeMenuFunction(id_menu)"
+          />
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -134,7 +140,12 @@ export default {
       console.log(`New menu:`, this.database.menus);
       this.resetForm();
     },
-    removeMenuFunction(id_menu) {},
+    // removeMenuFunction(id) {
+    //   this.database.menus.(id - 1);
+    //   console.log(`successful`, id);
+
+    //   this.resetForm();
+    // },
   },
 };
 </script>
