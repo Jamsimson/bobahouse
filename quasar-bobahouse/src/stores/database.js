@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const userCounterStore = defineStore({
   id: "counter",
   state: () => ({
-    count: 0,
+    count: 1,
     users: [
       {
         id: 1,

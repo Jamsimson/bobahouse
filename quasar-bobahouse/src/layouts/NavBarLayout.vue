@@ -13,7 +13,9 @@
           BOBA HOUSE
         </q-toolbar-title>
         <!-- Right site of navbar: username and cart -->
-        <div v-for="user in user" :key="user">@{{ user.username }}</div>
+        <div v-for="user in user" :key="user">
+          @{{ database.users[0].username }}
+        </div>
         <q-item>
           <q-item-section flex-center>
             <q-btn round icon="shopping_bag" @click="$router.push('/payment')">
