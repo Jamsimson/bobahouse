@@ -9,12 +9,12 @@
       <!-- loop image -->
       <img v-bind:src="index.img" />
 
-      <q-card-section class="colunm">
+      <q-card-section class="col">
         <div class="text-h6">{{ index.menu_name }}</div>
         <div class="text-subtitle2">Catagory:{{ index.catagory }}</div>
       </q-card-section>
       <q-card-section>
-        <q-card-actions align="right">
+        <q-card-actions class="col" align="right">
           <q-btn
             flat
             round
@@ -33,7 +33,7 @@
       <!-- Section Beverage name and image -->
       <q-card-section>
         <div>
-          <div class="colum flex flex-center">
+          <div class="col flex flex-center">
             <div class="closePosition">
               <q-btn
                 flat
@@ -66,7 +66,7 @@
       <q-card-section>
         <!-- เพิ่มจำนวนเเก้ว + 1 - (add)  col col-sm-2 -->
         <div class="row">
-          <div class="col col-sm-2 amount">
+          <div class="col amount">
             <q-btn
               round
               color="black"
@@ -74,10 +74,10 @@
               @click="database.increaseCount"
             />
           </div>
-          <div class="col col-sm-2 amount">
+          <div class="col-sm-2 amount">
             <div class="text-h3">{{ database.count }}</div>
           </div>
-          <div class="col col-sm-2 amount">
+          <div class="col-sm-2 amount">
             <q-btn
               round
               color="black"
@@ -85,7 +85,7 @@
               @click="database.decreaseCount"
             />
           </div>
-          <div class="col col-sm-6">
+          <div class="col-sm-6">
             <q-btn
               unelevated
               rounded
@@ -121,6 +121,7 @@ export default {
       numDialog: "",
       num: 0,
       size: "",
+      total:null,
     };
   },
   methods: {
@@ -154,6 +155,7 @@ export default {
   width: 290px;
 }
 .my-card {
+  height: 600px;
   width: 100%;
   max-width: 350px;
 }

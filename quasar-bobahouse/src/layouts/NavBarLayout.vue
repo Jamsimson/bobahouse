@@ -19,7 +19,7 @@
         <q-item>
           <q-item-section flex-center>
             <q-btn round icon="shopping_bag" @click="$router.push('/payment')">
-              <q-badge floating color="red" rounded>{{ cart.length }}</q-badge>
+              <q-badge floating color="red" rounded>{{ this.database.carts.length }}</q-badge>
             </q-btn>
           </q-item-section>
         </q-item>
@@ -44,7 +44,7 @@
           <q-item-section>Cart</q-item-section>
         </q-item>
         <!-- Transaction -->
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple @click="$router.push('/transaction')">
           <q-item-section avatar>
             <q-icon color="dark" name="blender" />
           </q-item-section>

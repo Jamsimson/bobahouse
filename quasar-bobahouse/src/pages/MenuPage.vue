@@ -1,11 +1,11 @@
 <template>
-  <q-page padding>
+  <q-page class="justify-center q-pa-md" padding>
     <div class="flex flex-center q-mt-md">
       <div class="text-h3">MENU BOBA HOUSE</div>
     </div>
     <br />
     <!-- Search Button -->
-    <div class="flex flex-center">
+    <div class="justify-center flex flex-center">
       <q-input
         rounded
         outlined
@@ -31,16 +31,16 @@
       />
     </div>
     <!-- Add menu  -->
-    <!-- <div class="flex flex-center">
+    <div class="flex flex-center">
       <q-btn color="red" icon="add" label="Add" @click="addMenu = true" />
       <q-btn
         color="primary"
         icon="add"
         label="remove"
         @click="removeMenu = true"
-      /> -->
+      />
     <!-- Add Menu -->
-    <!-- <q-dialog v-model="addMenu" persistent>
+    <q-dialog v-model="addMenu" persistent>
         <q-card>
           <q-card-section class="colunm items-center">
             <q-input v-model="menu_name" type="text" label="Menu name" />
@@ -61,7 +61,7 @@
           </q-card-actions>
         </q-card>
       </q-dialog>
-    </div> -->
+    </div>
     <!-- Delete Menu -->
     <q-dialog v-model="removeMenu" persistent>
       <q-card>
@@ -82,7 +82,7 @@
     </q-dialog>
     <!-- Card Menu -->
     <div class="q-pa-md" id="layoutbeverage">
-      <div class="q-pa-md row col-3 grid-container">
+      <div class="row q-gutter-sm">
         <cardMenu />
       </div>
     </div>
@@ -140,12 +140,12 @@ export default {
       console.log(`New menu:`, this.database.menus);
       this.resetForm();
     },
-    // removeMenuFunction(id) {
-    //   this.database.menus.(id - 1);
-    //   console.log(`successful`, id);
+    removeMenuFunction(id) {
+      this.database.menus(id - 1);
+      console.log(`successful`, id);
 
-    //   this.resetForm();
-    // },
+      this.resetForm();
+    },
   },
 };
 </script>

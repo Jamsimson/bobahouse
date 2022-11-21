@@ -96,6 +96,7 @@ export default {
 
   data() {
     return {
+      database:userCounterStore(),
       order: [],
       size: "",
       sugar: "",
@@ -103,6 +104,9 @@ export default {
       ice: "",
     };
   },
+  methods:{
+    
+  }
 };
 </script>
 

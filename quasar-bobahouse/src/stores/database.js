@@ -4,6 +4,24 @@ export const userCounterStore = defineStore({
   id: "counter",
   state: () => ({
     count: 1,
+    carts:[
+      {
+        menu_id:2,
+        menu_name:"Milk Tea 2",
+        topping:[0,1],
+        count:2,
+        size:"L",
+
+      },
+      {
+        menu_id:2,
+        menu_name:"Milk Tea 2",
+        topping:[0,1],
+        count:1,
+        size:"S",
+
+      },
+    ],
     users: [
       {
         id: 1,
@@ -11,7 +29,6 @@ export const userCounterStore = defineStore({
         phonenumber: "023-651-4895",
       },
     ],
-    carts: [],
     menus: [
       {
         id: 1,
@@ -85,8 +102,27 @@ export const userCounterStore = defineStore({
         },
       },
     ],
+    topping:[
+      {
+        name:"toping 1",
+        price:10
+      },
+      {
+        name:"toping 2",
+        price:10
+      },
+      {
+        name:"toping 3",
+        price:10
+      },
+    ]
   }),
   actions: {
+    addCarts(item){
+      this.carts.push(item)
+      console.log(`carts: `+this.carts);
+      
+    },
     increaseCount() {
       this.count++;
     },
@@ -94,7 +130,7 @@ export const userCounterStore = defineStore({
       if (this.count === 0) {
         this.count = 0;
       } else {
-        this.count--;
+        this.count--; 
       }
     },
     resetCount() {
